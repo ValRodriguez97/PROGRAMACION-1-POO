@@ -29,14 +29,14 @@ public class MascotaTest {
     @Test
     public void datosCompletos() {
         LOG.info("Inicio test datos completos");
-        Mascota mascota = new Mascota("Paloma", "Canino", "Golden Retriever", (byte)9, "Hembra", "Negro", (float)6.2);
+        Mascota mascota = new Mascota("Paloma", "Canino", "Golden Retriever", (byte)9, "Hembra", "Negro", (float)30.1);
         assertEquals("Paloma", mascota.nombre());
         assertEquals("Canino", mascota.especie());
         assertEquals("Golden Retriever", mascota.raza());
         assertEquals(9, mascota.edad());
         assertEquals("Hembra", mascota.genero());
         assertEquals("Negro", mascota.color());
-        assertEquals((float) 6.2, mascota.peso ());
+        assertEquals((float) 30.1, mascota.peso ());
 
         LOG.info("Finalización test datos completos");
     }
