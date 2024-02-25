@@ -1,0 +1,85 @@
+/**
+ * Clase para probar el funcionamiento del código
+ * @author Área de programación UQ
+ * @since 2023-08
+ * 
+ * Licencia GNU/GPL V3.0 (https://raw.githubusercontent.com/grid-uq/poo/main/LICENSE) 
+ */
+package co.edu.uniquindio.poo;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assumptions.assumeFalse;
+
+import java.util.logging.Logger;
+import org.junit.jupiter.api.Test;
+
+/**
+ * Unit test for simple App.
+ */
+public class MascotaTest {
+    private static final Logger LOG = Logger.getLogger(MascotaTest.class.getName());
+
+    /**
+     * Rigorous Test :-)
+     */
+    @Test
+    public void datosCompletos() {
+        LOG.info("Inicio test datos completos");
+        Mascota mascota = new Mascota("Paloma", "Canino", "Golden Retriever", (byte)9, "Hembra", "Negro", (float)6.2);
+        assertEquals("Paloma", mascota.nombre());
+        assertEquals("Canino", mascota.especie());
+        assertEquals("Golden Retriever", mascota.raza());
+        assertEquals(9, mascota.edad());
+        assertEquals("Hembra", mascota.genero());
+        assertEquals("Negro", mascota.color());
+        assertEquals((float) 6.2, mascota.peso ());
+
+        LOG.info("Finalización test datos completos");
+    }
+
+    @Test
+    public void datosIguales() {
+        LOG.info("Inicio test datos iguales");
+        Mascota mascota1 = new Mascota("Poseidon", "Felino", "Korat", (byte)3, "Macho", "Gris", (float)6.2);
+        Mascota mascota2 = new Mascota("Paloma", "Canino", "Golden Retriever", (byte)9, "Hembra", "Negro", (float)30.1);
+        assertNotEquals(mascota1.nombre(), mascota2.nombre());
+        assertNotEquals(mascota1.especie(), mascota2.especie());
+        assertNotEquals(mascota1.raza(), mascota2.raza());
+        assertNotEquals(mascota1.edad(), mascota2.edad());
+        assertNotEquals(mascota1.genero(), mascota2.genero());
+        assertNotEquals(mascota1.color(), mascota2.color());
+        assertNotEquals(mascota1.peso(), mascota2.peso());
+        
+        LOG.info("Finalización test datos iguales");
+        
+    }
+
+    @Test 
+    public void datosNulos(){
+        LOG.info ("Inicio test datos nulos");
+        assertThrows(Throwable.class, () -> new Mascota (null, null, null, (byte)0, null, null, (float) 0 ));
+    
+        LOG.info("Finalización test datos nulos");
+
+    }
+
+    @Test 
+    public void datosVacios(){
+        LOG.info("Inicio prueba datos vacios");
+        assertThrows(Throwable.class, () -> new Mascota ("" , "", "", (byte)0, "", "", (float)0));
+
+        LOG.info("Finalización test datos vacios");
+
+    }
+
+    @Test
+    public void errorEdad (){
+        LOG.info("Inicio prueba limite edad");
+        assertThrows(Throwable.class, () -> new Mascota ("Paloma" , "Canino", "Golden Retriever", (byte) 9, "Hembra", "Negro", (float)30.1));
+
+        LOG.info("Finalización prueba limite edad");
+    }
+}
