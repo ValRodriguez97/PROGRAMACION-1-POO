@@ -3,10 +3,11 @@ package co.edu.uniquindio.poo;
 public record Mascota(String nombre, String especie, String raza, byte edad, String genero, String color, Float peso) {
 
     public Mascota{
+
         assert nombre != null;
         assert especie != null;
         assert raza != null;
-        assert edad != (byte) 0;
+        assert edad < (byte) 25;
         assert genero != null;
         assert color != null;
         assert peso != (float)0;
@@ -14,17 +15,14 @@ public record Mascota(String nombre, String especie, String raza, byte edad, Str
         assert nombre != "";
         assert especie != "";
         assert raza != "";
-        assert edad != 0;
-        assert genero != "";
+        assert edad < (byte) 25 ;
         assert color != "";
-        assert peso != 0;
+        assert peso != (byte)0;
 
         assert edad < 25;
-        
-
-        
 
     }
+
 
     
 }

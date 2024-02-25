@@ -7,6 +7,7 @@
  */
 package co.edu.uniquindio.poo;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -43,8 +44,8 @@ public class MascotaTest {
     @Test
     public void datosIguales() {
         LOG.info("Inicio test datos iguales");
-        Mascota mascota1 = new Mascota("Poseidon", "Felino", "Korat", (byte)3, "Macho", "Gris", (float)6.2);
-        Mascota mascota2 = new Mascota("Paloma", "Canino", "Golden Retriever", (byte)9, "Hembra", "Negro", (float)30.1);
+        Mascota mascota1 = new Mascota("Poseidon", "Felino", "Korat", (byte) 3, "Macho", "Gris", (float)6.2);
+        Mascota mascota2 = new Mascota("Paloma", "Canino", "Golden Retriever", (byte) 9, "Hembra", "Negro", (float)30.1);
         assertNotEquals(mascota1.nombre(), mascota2.nombre());
         assertNotEquals(mascota1.especie(), mascota2.especie());
         assertNotEquals(mascota1.raza(), mascota2.raza());
@@ -76,10 +77,11 @@ public class MascotaTest {
     }
 
     @Test
-    public void errorEdad (){
+    public void limiteEdad(){
         LOG.info("Inicio prueba limite edad");
-        assertThrows(Throwable.class, () -> new Mascota ("Paloma" , "Canino", "Golden Retriever", (byte) 9, "Hembra", "Negro", (float)30.1));
+        assertDoesNotThrow(() -> new Mascota ("Paloma" , "Canino", "Golden Retriever", (byte) 5, "Hembra", "Negro", (float)30.1));
 
         LOG.info("Finalización prueba limite edad");
     }
 }
+
