@@ -13,5 +13,16 @@ public record Mascota(String numeroIdentificacion, String nombre, String especie
         assert genero != null  : "El genero debe ser diferente de null";
         assert color != null : "El color debe ser diferente de null";
         assert peso != (float)0;
+
+        assert numeroIdentificacion != "";
+        assert nombre != "";
+        assert especie != "";
+        assert raza != "";
+        assert edad > 0;
+        assert genero != "";
+        assert color != "";
+        assert peso >0;
+
+        assert edad < 25;
     }
 }
