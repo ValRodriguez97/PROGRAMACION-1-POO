@@ -35,7 +35,7 @@ public class Veterinaria {
         return exist;
     }
 
-    public Collection <Mascota> getlListaMascotas() {
+    public Collection <Mascota> getlistaMascotas() {
         return Collections.unmodifiableCollection(listaMascotas);
     }
 

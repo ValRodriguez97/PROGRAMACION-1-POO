@@ -28,11 +28,11 @@ public class VeterinariaTest {
         LOG.info("Inicio prueba agregarMascota");
         Veterinaria veterinaria = new Veterinaria("Amigos Peludos");
         Mascota mascota = new Mascota("1234", "Poseidon", "Felino", "Korat", (byte)2, "Macho", "Gris", (float) 6.4);
-
         veterinaria.agregarMascota(mascota);
 
-        assertTrue(veterinaria.getlListaMascotas().contains(mascota));
-        assertEquals("1234", veterinaria.getlListaMascotas().size());
+
+        assertTrue(veterinaria.getlistaMascotas().contains(mascota));
+        assertEquals(1, veterinaria.getlistaMascotas().size());
 
         LOG.info("Finalización prueba agregarMascota");
     }
@@ -54,7 +54,6 @@ public class VeterinariaTest {
 
         Mascota mascota1 = new Mascota("1234", "Poseidon", "Felino", "Korat", (byte) 2, "Macho", "Gris", (float)6.1);
         Mascota mascota2 = new Mascota("1234", "Paloma", "Canino", "Korat", (byte)9, "Hembra", "Negro", (float)30.2);
-
         veterinaria.agregarMascota(mascota1);
 
         assertThrows(Throwable.class, () -> veterinaria.agregarMascota(mascota2));
