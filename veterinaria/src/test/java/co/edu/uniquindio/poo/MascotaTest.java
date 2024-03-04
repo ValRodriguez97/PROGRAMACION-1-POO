@@ -79,7 +79,7 @@ public class MascotaTest {
     @Test
     public void limiteEdad(){
         LOG.info("Inicio prueba limite edad");
-        assertDoesNotThrow(() -> new Mascota ("Paloma" , "Canino", "Golden Retriever", (byte) 5, "Hembra", "Negro", (float)30.1));
+        assertDoesNotThrow(() -> new Mascota ("Paloma" , "Canino", "Golden Retriever", (byte)9, "Hembra", "Negro", (float)30.1));
 
         LOG.info("Finalización prueba limite edad");
     }
