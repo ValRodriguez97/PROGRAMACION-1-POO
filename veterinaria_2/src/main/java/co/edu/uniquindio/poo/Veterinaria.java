@@ -38,7 +38,4 @@ public class Veterinaria {
     public Collection <Mascota> getlistaMascotas() {
         return Collections.unmodifiableCollection(listaMascotas);
     }
-
-
-
 }
