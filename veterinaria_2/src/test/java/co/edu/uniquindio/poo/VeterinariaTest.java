@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
 
@@ -61,6 +62,18 @@ public class VeterinariaTest {
         LOG.info("Finalización prueba MascotaRepetida");
     }
 
+    @Test 
+    public void mascotaMayor10Años (){
+        LOG.info("Inicio prueba para obtener mascotas mayores a 10 años");
+
+        Veterinaria veterinaria = new Veterinaria("Amigos peludos");
+
+        Mascota mascota1 = new Mascota("123", "Paloma", "Canino", "Golden", (byte) 11, "Hembra", "Negro", (float)54.2);
+        veterinaria.agregarMascota(mascota1);
+
+        assertTrue(veterinaria.getlistaMascotas().contains(mascota1));
+    
+    }
 }
 
 

@@ -18,7 +18,7 @@ public class Veterinaria {
     public String getNombre(){
         return nombre;
     }
-
+  
     public void agregarMascota (Mascota mascota) {
         assert numeroIdentificacionExistente (mascota.numeroIdentificacion()) == false : "El numero de identificacion ya existe" ;
         listaMascotas.add(mascota);
@@ -38,4 +38,21 @@ public class Veterinaria {
     public Collection <Mascota> getlistaMascotas() {
         return Collections.unmodifiableCollection(listaMascotas);
     }
+
+    public void agregarMascotaMayor(Mascota mascota){
+        assert mascotasMayor10Años (mascota.edad()) == false;
+        listaMascotas.add(mascota);
+    }
+
+   private boolean mascotasMayor10Años (byte edad){
+    boolean mascotaMayor = false;
+
+    for (Mascota mascota : listaMascotas){
+        if (mascota.edad() > 10){
+            mascotaMayor = true;
+        }
+    }
+    return mascotaMayor;
+   }
+
 }
