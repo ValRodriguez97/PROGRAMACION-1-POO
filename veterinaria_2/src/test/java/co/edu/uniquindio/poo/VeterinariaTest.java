@@ -19,7 +19,7 @@ public class VeterinariaTest {
 
         Veterinaria veterinaria = new Veterinaria ("Amigos Peludos");
 
-        assertEquals("Amigos ", veterinaria.getNombre());
+        assertEquals("Amigos Peludos", veterinaria.getNombre());
 
         LOG.info("Fin prueba datos completos");
     }
@@ -33,7 +33,7 @@ public class VeterinariaTest {
 
 
         assertTrue(veterinaria.getlistaMascotas().contains(mascota));
-        assertEquals(2, veterinaria.getlistaMascotas().size());
+        assertEquals(1, veterinaria.getlistaMascotas().size());
 
         LOG.info("Finalización prueba agregarMascota");
     }
