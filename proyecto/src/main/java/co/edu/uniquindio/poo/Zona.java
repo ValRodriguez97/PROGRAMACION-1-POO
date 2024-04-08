@@ -5,10 +5,16 @@ public class Zona {
 
     private final String nombre;
     private final FiguraGeometrica [] figuras;
+    private final Material material;
 
-    public Zona (String nombre){
+    public Material getMaterial() {
+        return material;
+    }
+
+    public Zona (String nombre, Material material){
         this.nombre = nombre;
-        this.figuras = new FiguraGeometrica[2];
+        this.figuras = new FiguraGeometrica[3];
+        this.material = material;
 
     }
 
