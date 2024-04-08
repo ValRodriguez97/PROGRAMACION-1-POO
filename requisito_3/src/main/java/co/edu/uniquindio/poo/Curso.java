@@ -7,22 +7,13 @@ import java.util.LinkedList;
 public class Curso {
 
     private final String nombre;
-    private final Collection <Estudiante> listaEstudiantes; /*Lista, generica, no especifica que tipo de lista es 
-    Que contiene la coleecion -> Estudiantes y se va a llamar listaEstudiantes.*/
+    private final Collection <Estudiante> listaEstudiantes;
 
-    public Curso(String nombre){ /*Public o constructpr le da los valores a los atributos */
-        this.nombre = nombre;    /*this, yo mismo, este nombre, uno mismo */
-        this.listaEstudiantes = new LinkedList <Estudiante> ();   /* elementos que estan conectados unos tras otros. new -> se creo un espacio de memoria*/
+    public Curso(String nombre){ 
+        this.nombre = nombre;   
+        this.listaEstudiantes = new LinkedList <Estudiante> ();  
 
     }
-    /*Cada atributo tiene dos metodos, set .> cambiar el valor del atributo. Git
-     * Final -> no se puede modificar el nombre . get es para obtener el valor de un atributo
-    */
-    // public void setNombre (String nombre){
-    //   this.nombre = nombre;
-    //}
-
-    /*colecction -> por dentro tiene mas atributos */
 
     public String getNombre(){
         return nombre;
@@ -49,4 +40,3 @@ public class Curso {
     }
 
 }
-
