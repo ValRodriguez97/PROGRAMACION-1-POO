@@ -1,11 +1,11 @@
 package co.edu.uniquindio.poo;
 
-public class Triangulo extends FiguraGeometrica{
+public abstract class Triangulo extends FiguraGeometrica{
     private final double base;
     private final double altura;
 
-    public Triangulo(double area, double base, double altura) {
-        super(area);
+    public Triangulo(double calcularArea, double base, double altura) {
+        super(calcularArea);
         this.base = base;
         this.altura = altura;
     }
@@ -17,5 +17,11 @@ public class Triangulo extends FiguraGeometrica{
     public double getAltura (){
         return altura;
     }
+
+    @Override
+    public double getCalcularArea (){
+        return base * altura;
+    }
+
 
 }

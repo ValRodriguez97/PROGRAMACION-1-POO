@@ -1,14 +1,16 @@
 package co.edu.uniquindio.poo;
 
-public class FiguraGeometrica {
-    private final double area;
+public abstract class FiguraGeometrica { // no se puede instanciar una clase abstracta
+    private double calcularArea;
 
-    public FiguraGeometrica (double area){
-        this.area = area;
+    public abstract double calcularArea();
+
+    public FiguraGeometrica (double calcularArea){
+        this.calcularArea = calcularArea;
     }
 
-    public double getArea(){
-        return area;
+    public double getCalcularArea(){
+        return calcularArea;
     }
 
 }
