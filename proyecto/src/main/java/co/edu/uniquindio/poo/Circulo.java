@@ -4,13 +4,12 @@ package co.edu.uniquindio.poo; //Se declara el paquete porque todo archivo tiene
  * Clase circulo
  */
 
-public abstract class Circulo extends FiguraGeometrica {  
+public class Circulo extends FiguraGeometrica {  
     private final double radio; 
     /*
      * Constructor de la clase circulos
      */
-    public Circulo (double calcularArea, double radio){
-        super(calcularArea);
+    public Circulo (double radio){
         this.radio = radio;
     }
 
@@ -31,11 +30,12 @@ public abstract class Circulo extends FiguraGeometrica {
      * Metodo para calcular el area de un circulo
      */
     @Override
-    public double getCalcularArea (){
+    public double calcularArea (){
         return Math.PI * Math.pow(radio, 2);
     }
 }
 
 //una clase puede tener varios constructores//
 //Math es una clase que ya tiene java, es estatico//
+//Todas las clases de tipo excepcion se heredan de throwable//
 

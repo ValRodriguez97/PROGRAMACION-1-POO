@@ -9,11 +9,13 @@ public enum Material {
 
     private final int valorMetroCuadrado;
 
-    public int getValorMetroCuadrado() {
+    public int valorMetroCuadrado() {
         return valorMetroCuadrado;
     }
 
     private Material (int valorMetroCuadrado){
         this.valorMetroCuadrado = valorMetroCuadrado;
     }
+
+
 }

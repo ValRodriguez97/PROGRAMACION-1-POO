@@ -4,16 +4,16 @@ package co.edu.uniquindio.poo;
 public class Zona { 
 
     private final String nombre;
-    private final FiguraGeometrica [] figuras;
+    private final FiguraGeometrica figura;
     private final Material material;
 
     public Material getMaterial() {
         return material;
     }
 
-    public Zona (String nombre, Material material){
+    public Zona (String nombre, Material material, FiguraGeometrica figura){
         this.nombre = nombre;
-        this.figuras = new FiguraGeometrica[3];
+        this.figura = figura;
         this.material = material;
 
     }
@@ -22,8 +22,10 @@ public class Zona {
         return nombre;
     }
 
-    public FiguraGeometrica[] getFiguras() {
-        return figuras;
+    public FiguraGeometrica getFiguras() {
+        return figura;
     }
+
+    
 
 }

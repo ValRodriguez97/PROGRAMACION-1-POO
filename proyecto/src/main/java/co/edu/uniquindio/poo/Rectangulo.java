@@ -1,12 +1,11 @@
 package co.edu.uniquindio.poo;
 
-public abstract class Rectangulo extends FiguraGeometrica {
+public class Rectangulo extends FiguraGeometrica {
 
     private final double ancho;
     private final double alto;   
 
     public Rectangulo (double calcularArea, double ancho, double alto){
-        super(calcularArea);
         this.ancho = ancho;
         this.alto = alto;
     }
@@ -20,7 +19,7 @@ public abstract class Rectangulo extends FiguraGeometrica {
     }
 
     @Override
-    public double getCalcularArea (){
+    public double calcularArea (){
         return ancho *alto;
     }
 

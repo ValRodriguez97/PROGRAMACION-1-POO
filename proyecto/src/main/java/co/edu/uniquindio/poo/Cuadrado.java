@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo;
 
-public abstract class Cuadrado extends Rectangulo {
+public class Cuadrado extends Rectangulo {
     
     private final double lado;
         
@@ -13,9 +13,6 @@ public abstract class Cuadrado extends Rectangulo {
         return lado;
     }
 
-    @Override //anotacion
-    public double getCalcularArea (){
-        return lado * lado;
-    }
+    
 
 }
