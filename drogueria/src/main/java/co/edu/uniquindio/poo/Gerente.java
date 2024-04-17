@@ -1,20 +1,20 @@
 package co.edu.uniquindio.poo;
 
-import java.util.ArrayList;
+import java.util.Collection;
 
 public class Gerente extends Empleado{
-    private ArrayList<Pedido> listaPedidos;
+    private Collection<Producto> listaProductos;
     
     public Gerente (String idEmpleado, double salario, String nombres, String apellidos, String dni, String direccion, String telefono){
         super(idEmpleado, salario, nombres, apellidos, dni, direccion, telefono);
     }
     
-    public void agregarPedido (Pedido pedido){
-        listaPedidos.add(pedido);
+    public void agregarPedido (Producto producto){
+        listaProductos.add(producto);
     }
 
-    public void eliminarPedido (Pedido pedido){
-        listaPedidos.remove(pedido);
+    public void eliminarPedido (Producto producto){
+        listaProductos.remove(producto);
     }
 
 }
