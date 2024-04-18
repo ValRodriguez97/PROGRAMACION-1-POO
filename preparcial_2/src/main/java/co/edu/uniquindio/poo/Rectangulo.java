@@ -4,10 +4,11 @@ public class Rectangulo extends Figura{
     private final double ancho;
     private final double alto;
 
-    public Rectangulo (String nombre, double calcularArea,double ancho, double alto){
-        super(nombre);
+    public Rectangulo (double ancho, double alto){
         this.ancho = ancho;
         this.alto = alto;
+        assert ancho >0;
+        assert alto >0;
     }
 
     public double getAncho (){

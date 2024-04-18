@@ -4,10 +4,11 @@ public class Triangulo extends Figura {
     private final double base;
     private final double altura;
 
-    public Triangulo(String nombre,double calcularArea,double base, double altura){
-        super(nombre);
+    public Triangulo(double base, double altura){
         this.base = base;
         this.altura = altura;
+        assert base > 0;
+        assert altura > 0;
     }
 
     public double getBase (){
