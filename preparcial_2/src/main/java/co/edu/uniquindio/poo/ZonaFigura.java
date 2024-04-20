@@ -12,6 +12,7 @@ public class ZonaFigura {
     public ZonaFigura (String nombre){
         assert nombre != null: "el nombre no puede ser nulo";
         listaFiguras = new LinkedList<>();
+        assert listaFiguras != null;
         this.nombre = nombre;
     }
 
@@ -31,9 +32,11 @@ public class ZonaFigura {
         return Collections.unmodifiableCollection(listaFiguras);
     }
 
-    public Collection<Figura> getFigurasOrdenadas(){
-        var comparador = Comparator.comparing(Figura :: calcularArea);
-        var figuraOrdenada = listaFiguras.stream().sorted(comparador).toList();
+    public Collection<Figura> FigurasOrdenadas(Collection<Figura> listFiguras){
+        var ordenador = Comparator.comparing(Figura :: calcularArea).reversed();
+        var figuraOrdenada = listaFiguras.stream().sorted(ordenador).toList();
+        assert figuraOrdenada != null;
+        assert listFiguras.size() > 0 ;
         return Collections.unmodifiableCollection(figuraOrdenada);
     }
 }
