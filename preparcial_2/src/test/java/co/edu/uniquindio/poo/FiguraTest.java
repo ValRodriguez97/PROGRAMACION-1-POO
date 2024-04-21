@@ -1,7 +1,7 @@
 /**
  * Clase para probar el funcionamiento del código
  * @author Área de programación UQ
- * @since 2023-08
+ * @since 2024-04
  * 
  * Licencia GNU/GPL V3.0 (https://raw.githubusercontent.com/grid-uq/poo/main/LICENSE) 
  */
@@ -24,7 +24,7 @@ public class FiguraTest {
     private static final Logger LOG = Logger.getLogger(FiguraTest.class.getName());
 
     /**
-     * Prueba con datos nulos
+     * @Test datos nulos
      */
     @Test
     public void datosNulos() {
@@ -34,7 +34,7 @@ public class FiguraTest {
         LOG.info("Fin prueba datos nulos");
     }
     /*
-     * Prueba datos completos
+     * @Test obtener datos completos de una figura
      */
     @Test
     public void datosCompletos (){
@@ -46,51 +46,60 @@ public class FiguraTest {
         zona.añadirFigura(cuadrado);
         zona.añadirFigura(triangulo);
 
-
-
         assertEquals(5, cuadrado.getAlto());
-      
+        LOG.info("Fin prueba datos completos");
     }
 
+    /*
+     * @Test para imprimir en consola el area de una figura
+     */
     @Test 
     public void calcularAreaCuadrado (){
+        LOG.info("Inicio prueba area de una figura");
         var cuadrado = new Cuadrado(3, 2);
         assertEquals(6, cuadrado.calcularArea());
         System.out.println(cuadrado.calcularArea());
+        LOG.info("Fin prueba area de una figura");
     }
 
-    /*se
-     * Metodo para obtener una nueva lista ordenada 
+    /*
+     * @Test para obtener una lista de figuras ordenadas por area 
      */
     @Test
     public void listaOrdenada (){
+        LOG.info("Inicio prueba lista de figuras ordenadas");
         var zonaFigura = new ZonaFigura("La floresta");
         var rectangulo = new Rectangulo(3, 1);
         var triangulo = new Triangulo(6, 2);
-        var cuadrado = new Cuadrado(2, 4);
+        var cuadrado = new Cuadrado(1, 4);
 
         zonaFigura.añadirFigura(rectangulo);
         zonaFigura.añadirFigura(triangulo);
         zonaFigura.añadirFigura(cuadrado);
         
-        Collection<Figura> listaEsperada = List.of(cuadrado, triangulo, rectangulo);
+        Collection<Figura> listaEsperada = List.of(triangulo, cuadrado, rectangulo);
         assertIterableEquals(listaEsperada, zonaFigura.FigurasOrdenadas(zonaFigura.getListaFiguras()));
+        LOG.info("Fin prueba lista de figuras ordenadas");
     }
 
     /**
-     * 
+     * @Test lista de datos nulos
      */
     @Test
     public void listaDatosNulos(){
         LOG.info("Inicio test listaDatosNulos");
         assertThrows(Throwable.class,()-> new ZonaFigura(null).FigurasOrdenadas(null));
-
         LOG.info("Fin test listaDatosNulos");
     }
 
+    /*
+     * @Test lista de datos vacios
+     */
     @Test
     public void listaDatosVacios (){
+        LOG.info("Inicio prueba lista datos vacios");
         Collection<Figura> lista = new LinkedList<>();
         assertThrows(Throwable.class, ()->  new ZonaFigura("").FigurasOrdenadas(lista));
+        LOG.info("Fin prueba lista datos vacios");
     }
 }

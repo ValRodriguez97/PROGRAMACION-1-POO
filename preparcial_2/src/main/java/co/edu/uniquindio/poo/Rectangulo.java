@@ -23,5 +23,4 @@ public class Rectangulo extends Figura{
     public double calcularArea(){
         return ancho * alto;
     }
-
 }
