@@ -15,13 +15,19 @@ public enum Municipio {
     CORDOBA (30000), 
     BUENAVISTA (35000);
 
-    private final int sobreCosto;
+    private final double sobreCosto;
 
+    /*
+     * Metodo constructor de la clase Municipio
+     */
     private Municipio (int sobreCosto){
         this.sobreCosto = sobreCosto;
     }
 
-    public int getSobreCosto() {
+    /*
+     * Método constrcutor para obtener el valor del sobrecosto de un municipio
+     */
+    public double getSobreCosto() {
         return sobreCosto;
     }
 }

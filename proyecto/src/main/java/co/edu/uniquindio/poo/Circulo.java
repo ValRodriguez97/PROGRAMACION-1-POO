@@ -6,28 +6,24 @@ package co.edu.uniquindio.poo; //Se declara el paquete porque todo archivo tiene
 
 public class Circulo extends FiguraGeometrica {  
     private final double radio; 
+
     /*
-     * Constructor de la clase circulos
+     * Método constructor de la clase Circulo
      */
     public Circulo (double radio){
+        assert radio > 0;
         this.radio = radio;
     }
 
     /*
-     * Metodo get de radio
+     * Método para obtener el valor radio de un circulo
      */
     public double getRadio (){
         return radio;
     }
 
     /*
-     * Metodo set de radio
-     */
-    public double setRadio (){
-        return radio;
-    }
-    /*
-     * Metodo para calcular el area de un circulo
+     * Método para calcular el area de un circulo
      */
     @Override
     public double calcularArea (){

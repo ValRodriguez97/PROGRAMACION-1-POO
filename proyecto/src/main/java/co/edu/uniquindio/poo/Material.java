@@ -7,15 +7,19 @@ public enum Material {
     GRAMA_NATURAL(20000), 
     ASFALTO(40000);
 
-    private final int valorMetroCuadrado;
+    private final double valorMetroCuadrado;
 
-    public int valorMetroCuadrado() {
-        return valorMetroCuadrado;
-    }
-
+    /*
+     * Método constructor de la clase enum Material
+     */
     private Material (int valorMetroCuadrado){
         this.valorMetroCuadrado = valorMetroCuadrado;
     }
 
-
+    /*
+     * Método para obtener el valor por metro cuadrado de un material
+     */
+    public double valorMetroCuadrado() {
+        return valorMetroCuadrado;
+    }
 }
