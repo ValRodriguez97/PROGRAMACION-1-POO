@@ -29,7 +29,6 @@ public class TrianguloTest {
         LOG.info("Inicio test calcular el area de un triangulo cuando el valor de su altura es negativo");
         assertThrows(Throwable.class, () -> new Triangulo(3, -30));
         LOG.info("Fin test calcular el area de un triangulo cuando el valor de su altura es negativo");
-    }
-
+    }  
 
 }
