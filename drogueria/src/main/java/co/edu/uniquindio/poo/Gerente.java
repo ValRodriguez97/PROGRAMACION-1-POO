@@ -9,11 +9,11 @@ public class Gerente extends Empleado{
         super(idEmpleado, salario, nombres, apellidos, dni, direccion, telefono);
     }
     
-    public void agregarPedido (Producto producto){
+    public void agregarProducto (Producto producto){
         listaProductos.add(producto);
     }
 
-    public void eliminarPedido (Producto producto){
+    public void eliminarProducto (Producto producto){
         listaProductos.remove(producto);
     }
 

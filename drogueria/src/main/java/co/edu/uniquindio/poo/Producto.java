@@ -15,6 +15,7 @@ public abstract class Producto {
         this.precio = precio;
         this.cantidadStock = cantidadStock;
         this.idProveedor = idProveedor;
+        assert cantidadStock > 0;
     }
 
     public String getIdProducto() {

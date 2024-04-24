@@ -5,6 +5,8 @@ package co.edu.uniquindio.poo;
  *
  */
 public class App {
+    public static String PRECISION;
+
     public static void main(String[] args) {
         System.out.println("Hello World!");
     }
