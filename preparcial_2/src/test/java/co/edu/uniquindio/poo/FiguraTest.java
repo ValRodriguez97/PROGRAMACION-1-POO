@@ -78,7 +78,7 @@ public class FiguraTest {
         zonaFigura.añadirFigura(cuadrado);
         
         Collection<Figura> listaEsperada = List.of(triangulo, cuadrado, rectangulo);
-        assertIterableEquals(listaEsperada, zonaFigura.FigurasOrdenadas(zonaFigura.getListaFiguras()));
+        assertIterableEquals(listaEsperada, zonaFigura.FigurasOrdenadas(zonaFigura.getFiguras()));
         LOG.info("Fin prueba lista de figuras ordenadas");
     }
 
