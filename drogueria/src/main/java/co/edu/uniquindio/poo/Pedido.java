@@ -37,4 +37,10 @@ public class Pedido {
         return getCantidad() * productoPedido.getPrecio();
     }
 
+    @Override
+    public String toString() {
+        return "Pedido [fecha=" + fecha + ", cantidad=" + cantidad + ", productoPedido=" + productoPedido
+                + ", clientePedido=" + clientePedido + "]";
+    }
+
 }

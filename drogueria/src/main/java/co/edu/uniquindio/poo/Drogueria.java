@@ -54,6 +54,14 @@ public class Drogueria {
         listaPersonas.add(persona);
     }
 
+    @Override
+    public String toString() {
+        return "Drogueria [nombre=" + nombre + ", listaPersonas=" + listaPersonas + ", listaProductos=" + listaProductos
+                + ", listaPedidos=" + listaPedidos + "]";
+    }
+
+    
+
     //private boolean productoSinStock (int cantidadStock){
        //Predicate <Pedido> pedidoVacio = pedido -> pedido.geProductoPedido().getCantidadStock() != 0;
        // return listaPedidos.stream().filter(pedidoVacio).findAny().isPresent();

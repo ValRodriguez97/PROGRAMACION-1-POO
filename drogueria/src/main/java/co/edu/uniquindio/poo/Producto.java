@@ -41,4 +41,11 @@ public abstract class Producto {
     public String getIdProveedor() {
         return idProveedor;
     }
+
+    @Override
+    public String toString() {
+        return "Producto [idProducto=" + idProducto + ", nombre=" + nombre + ", descripcion=" + descripcion
+                + ", precio=" + precio + ", cantidadStock=" + cantidadStock + ", idProveedor=" + idProveedor + "]";
+    }
+    
 }

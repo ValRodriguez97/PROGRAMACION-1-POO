@@ -12,4 +12,10 @@ public class ProductoHogar extends Producto {
         return indicaciones;
     }
 
+    @Override
+    public String toString() {
+        return "ProductoHogar [indicaciones=" + indicaciones + "]";
+    }
+    
+
 }

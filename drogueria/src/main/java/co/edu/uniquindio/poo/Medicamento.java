@@ -8,6 +8,11 @@ public class Medicamento extends Producto {
         this.dosis = dosis;
     }
 
+    @Override
+    public String toString() {
+        return "Medicamento [dosis=" + dosis + "]";
+    }
+
     public double getDosis (){
         return dosis;
     }

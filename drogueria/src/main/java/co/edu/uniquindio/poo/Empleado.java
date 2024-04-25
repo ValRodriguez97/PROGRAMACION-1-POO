@@ -10,6 +10,11 @@ public class Empleado extends Persona{
         this.salario = salario;
     }
 
+    @Override
+    public String toString() {
+        return "Empleado [idEmpleado=" + idEmpleado + ", salario=" + salario + "]";
+    }
+
     public String getIdEmpleado (){
         return idEmpleado;
     }
@@ -17,5 +22,6 @@ public class Empleado extends Persona{
     public double getSalario (){
         return salario;
     }
+    
 }
 

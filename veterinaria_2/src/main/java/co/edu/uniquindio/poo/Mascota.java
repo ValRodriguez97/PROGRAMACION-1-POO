@@ -6,23 +6,14 @@ public record Mascota(String numeroIdentificacion, String nombre, String especie
     public Mascota{
         
         assert numeroIdentificacion != null : "El numero de identificacion debe ser diferente de null";
-        assert nombre != null : "El nombre debe ser diferente de null";
-        assert especie != null  : "La especie debe ser diferente de null";
-        assert raza != null : "La raza debe ser diferente de null";
-        assert edad >= (byte) 0;
-        assert genero != null  : "El genero debe ser diferente de null";
-        assert color != null : "El color debe ser diferente de null";
-        assert peso != (float)0;
+        assert nombre != null && !nombre.isBlank() : "El nombre debe ser diferente de null";
+        assert especie != null && !especie.isBlank() : "La especie debe ser diferente de null";
+        assert raza != null && !raza.isBlank(): "La raza debe ser diferente de null";
+        assert edad > (byte) 0;
+        assert genero != null && !genero.isBlank() : "El genero debe ser diferente de null";
+        assert color != null && !color.isBlank() : "El color debe ser diferente de null";
+        assert peso > (float)0;
 
-        assert numeroIdentificacion != "";
-        assert nombre != "";
-        assert especie != "";
-        assert raza != "";
-        assert edad > 0;
-        assert genero != "";
-        assert color != "";
-        assert peso >0;
-
-        assert edad < 25;
+        
     }
 }

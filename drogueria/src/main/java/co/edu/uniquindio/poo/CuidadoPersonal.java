@@ -12,4 +12,9 @@ public class CuidadoPersonal extends Producto {
         return ingredientes;
     }
 
+    @Override
+    public String toString() {
+        return "CuidadoPersonal [ingredientes=" + ingredientes + "]";
+    }
+
 }

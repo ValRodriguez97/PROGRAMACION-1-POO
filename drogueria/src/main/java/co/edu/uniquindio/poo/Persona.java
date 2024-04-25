@@ -1,7 +1,7 @@
 package co.edu.uniquindio.poo;
 
 
-public class Persona {
+public abstract class Persona {
     private final String nombres;
     private final String apellidos;
     private final String dni;
@@ -15,6 +15,13 @@ public class Persona {
         this.dni = dni;
         this.direccion = direccion;
         this.telefono = telefono;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Persona [nombres=" + nombres + ", apellidos=" + apellidos + ", dni=" + dni + ", direccion=" + direccion
+                + ", telefono=" + telefono + "]";
     }
 
 

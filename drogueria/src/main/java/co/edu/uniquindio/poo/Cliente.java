@@ -6,4 +6,9 @@ public class Cliente extends Persona{
         super(nombres, apellidos, dni, direccion, telefono);
     }
 
+    @Override
+    public String toString() {
+        return "Cliente []";
+    }
+
 }

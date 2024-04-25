@@ -16,5 +16,6 @@ public class Gerente extends Empleado{
     public void eliminarProducto (Producto producto){
         listaProductos.remove(producto);
     }
+    
 
 }
