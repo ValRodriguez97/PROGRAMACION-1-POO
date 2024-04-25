@@ -4,6 +4,7 @@ import java.util.Collection;
 //import java.util.Comparator;
 import java.util.LinkedList;
 //import java.util.function.Predicate;
+//import java.util.function.Predicate;
 
 public class Drogueria {
     private final String nombre;
@@ -54,8 +55,8 @@ public class Drogueria {
     }
 
     //private boolean productoSinStock (int cantidadStock){
-       // Predicate <Pedido> pedidoVacio = pedido -> pedido.geProductoPedido().getCantidadStock() > 0;
-        //return listaPedidos.stream().filter(pedidoVacio).findAny().isPresent();
+       //Predicate <Pedido> pedidoVacio = pedido -> pedido.geProductoPedido().getCantidadStock() != 0;
+       // return listaPedidos.stream().filter(pedidoVacio).findAny().isPresent();
     //}
 
 

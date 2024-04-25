@@ -17,8 +17,9 @@ public class DrogueriaTest {
     public void pedidosSinStock (){
         LOG.info("Inicio test pedidos con productos sin stock");
         assertThrows(Throwable.class, ()-> new Pedido(LocalDate.of(2024, 04, 22), 6, 
-        new ProductoHogar("124", "Crema Hidratante", "Crema hidratante con vitamina c", 200, 0, "3456", "Aplicar suavemente sobre el rostro"), 
-        new Cliente("Vanesa", "Muñoz", "46583", "hdcuebdieub", "sjgddushcids")));
+        new ProductoHogar("124", "Crema Hidratante", "Crema hidratante con vitamina c", 200,
+         0, "3456", "Aplicar suavemente sobre el rostro"), 
+        new Cliente("Vanesa", "Muñoz", "46583", "Calle 2", "123456789")));
         LOG.info("Fin test pedidos con productos sin stock");
     }
 
@@ -59,5 +60,6 @@ public class DrogueriaTest {
         drogueria.agregarPedido(pedido);
         assertEquals(1440000, pedido.calcularValorPedido(), 0.05, App.PRECISION);
     }
+
 
 }
