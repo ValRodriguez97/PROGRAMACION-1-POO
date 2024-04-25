@@ -29,13 +29,13 @@ public class MascotaTest {
     public void datosCompletos() {
         LOG.info("Inicio test datos completos");
         Mascota mascota = new Mascota("123", "pepe", "Felino", "Mestizo", (byte)10, "Macho", "Gris", (float)2);
-        assertEquals("Paloma", mascota.nombre());
-        assertEquals("Canino", mascota.especie());
-        assertEquals("Golden Retriever", mascota.raza());
-        assertEquals(9, mascota.edad());
-        assertEquals("Hembra", mascota.genero());
-        assertEquals("Negro", mascota.color());
-        assertEquals((float) 30.1, mascota.peso ());
+        assertEquals("Paloma", mascota.getNombre());
+        assertEquals("Canino", mascota.getEspecie());
+        assertEquals("Golden Retriever", mascota.getRaza());
+        assertEquals(9, mascota.getEdad());
+        assertEquals("Hembra", mascota.getGenero());
+        assertEquals("Negro", mascota.getColor());
+        assertEquals((float) 30.1, mascota.getPeso ());
 
         LOG.info("Finalización test datos completos");
     }
@@ -45,13 +45,13 @@ public class MascotaTest {
         LOG.info("Inicio test datos iguales");
         Mascota mascota1 = new Mascota("123", "pepe", "Felino", "Mestizo", (byte)10, "Macho", "Gris", (float)2);
         Mascota mascota2 = new Mascota("123", "pepe", "Felino", "Mestizo", (byte)10, "Macho", "Gris", (float)2);
-        assertNotEquals(mascota1.nombre(), mascota2.nombre());
-        assertNotEquals(mascota1.especie(), mascota2.especie());
-        assertNotEquals(mascota1.raza(), mascota2.raza());
-        assertNotEquals(mascota1.edad(), mascota2.edad());
-        assertNotEquals(mascota1.genero(), mascota2.genero());
-        assertNotEquals(mascota1.color(), mascota2.color());
-        assertNotEquals(mascota1.peso(), mascota2.peso());
+        assertNotEquals(mascota1.getNombre(), mascota2.getNombre());
+        assertNotEquals(mascota1.getEspecie(), mascota2.getEspecie());
+        assertNotEquals(mascota1.getRaza(), mascota2.getRaza());
+        assertNotEquals(mascota1.getEdad(), mascota2.getEdad());
+        assertNotEquals(mascota1.getGenero(), mascota2.getGenero());
+        assertNotEquals(mascota1.getColor(), mascota2.getColor());
+        assertNotEquals(mascota1.getPeso(), mascota2.getPeso());
         
         LOG.info("Finalización test datos iguales");
         

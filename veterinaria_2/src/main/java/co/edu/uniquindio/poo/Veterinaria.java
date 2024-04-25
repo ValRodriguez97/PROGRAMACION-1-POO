@@ -20,7 +20,7 @@ public class Veterinaria {
     }
   
     public void agregarMascota (Mascota mascota) {
-        assert numeroIdentificacionExistente (mascota.numeroIdentificacion()) == false : "El numero de identificacion ya existe" ;
+        assert numeroIdentificacionExistente (mascota.getNumeroIdentificacion()) == false : "El numero de identificacion ya existe" ;
         listaMascotas.add(mascota);
     }
 
@@ -28,7 +28,7 @@ public class Veterinaria {
         boolean exist = false;
 
         for (Mascota mascota : listaMascotas) {
-            if (mascota.numeroIdentificacion().equals(numeroIdentificacion)){
+            if (mascota.getNumeroIdentificacion().equals(numeroIdentificacion)){
                 exist = true;
             }
         }
@@ -40,7 +40,7 @@ public class Veterinaria {
     }
 
     public void agregarMascotaMayor(Mascota mascota){
-        assert mascotasMayor10Años (mascota.edad()) == false;
+        assert mascotasMayor10Años (mascota.getEdad()) == false;
         listaMascotas.add(mascota);
     }
 
@@ -48,7 +48,7 @@ public class Veterinaria {
     boolean mascotaMayor = false;
 
     for (Mascota mascota : listaMascotas){
-        if (mascota.edad() > 10){
+        if (mascota.getEdad() > 10){
             mascotaMayor = true;
         }
     }
