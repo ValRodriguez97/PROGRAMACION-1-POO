@@ -28,8 +28,10 @@ public class DrogueriaTest {
         LOG.info("Inicio test obtener productos con stock mayor a 100");
         var drogueria = new Drogueria("hsbdj");
 
-        CuidadoPersonal producto1 = new CuidadoPersonal("cndkncla", "92839283", "Jabon", "ajsdsjbcjds", 737828, 457, "ksandjsc");
-        ProductoHogar producto2 = new ProductoHogar("jdncds", "jncdsnekicn", "jdcjdcbi", 4343, 23, "jsdcbid", "jsbdieb");
+        CuidadoPersonal producto1 = new CuidadoPersonal("acido salicilico", "92839283", "Jabon", "jabon con olor a cerezas",
+         15000, 24, "98765321");
+        ProductoHogar producto2 = new ProductoHogar("7832643", "Jabon", "Jabon para lavar la ropa", 8000,
+         23, "37439847", "Mantener fuera del alcance de los niños");
         Medicamento producto3 = new Medicamento(232, "djnckjnfc", "ksdjcjdvb", "kjcjnf", 83734, 111, "ksjdncj");
 
         drogueria.agregarProducto(producto3);
@@ -43,15 +45,9 @@ public class DrogueriaTest {
         LOG.info("Fin test obtener productos con stock mayor a 100");
     }
 
-    @Test
-    public void agregarNuevoProducto (){
-        Drogueria drogueria = new Drogueria("a");
-        ProductoHogar producto = new ProductoHogar("123", "crema", "producto a base de alcohol", 3747, 100, "123", "Mantengase fuera del alcance de los niños");
-        drogueria.agregarProducto(producto);
-    }
-
     @Test 
-    public void costoTotalPedidos (){
+    public void costoTotalPedido (){
+        LOG.info("Inicio test calcular el costo total de un pedido");
         var drogueria = new Drogueria("a");
         Pedido  pedido = new Pedido(LocalDate.of(2024, 04, 22), 32, 
         new CuidadoPersonal("Niacinamida", "1234", "Jabon limpiador de rostro", "Aplicar tres dias en la semana",
@@ -59,7 +55,6 @@ public class DrogueriaTest {
         new Cliente("Vanesa", "Muñoz", "1234", "calle 2", "7836382"));
         drogueria.agregarPedido(pedido);
         assertEquals(1440000, pedido.calcularValorPedido(), 0.05, App.PRECISION);
+        LOG.info("Fin test calcular el costo total de un pedido");
     }
-
-
 }
