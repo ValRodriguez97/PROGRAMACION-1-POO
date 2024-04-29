@@ -1,30 +1,28 @@
 package co.edu.uniquindio.poo;
 
 import java.util.Collection;
-import java.util.Collections;
-//import java.util.Comparator;
 import java.util.LinkedList;
-//import java.util.function.Predicate;
-//import java.util.function.Predicate;
+import java.util.Collections;
 
 public class Drogueria {
     private final String nombre;
-    private final Collection<Persona> listaPersonas;
-    private final Collection<Producto> listaProductos;
-    private final Collection<Pedido> listaPedidos;
+    private final Collection<Persona> personas;
+    private final Collection<Producto> productos;
+    private final Collection<Pedido> pedidos;
 
     /*
      * Método construtor de la clase Drogueria
      */
     public Drogueria (String nombre){
         this.nombre =nombre;
-        listaPersonas = new LinkedList<>();
-        listaProductos = new LinkedList<>();
-        listaPedidos = new LinkedList<>();
+        personas = new LinkedList<>();
+        productos = new LinkedList<>();
+        pedidos = new LinkedList<>();
     }
 
     /*
      * Método para obtener el nombre de la drogueria
+     * @return nombre de la Drogueria
      */
     public String getNombre (){
         return nombre;
@@ -32,54 +30,58 @@ public class Drogueria {
 
     /*
      * Método para obtener la lista no modificable de personas
+     * @return lista no modifiable de personas
      */
     public Collection<Persona> getListaPersonas(){
-        return Collections.unmodifiableCollection(listaPersonas);
+        return Collections.unmodifiableCollection(personas);
     }
 
     /*
-     * Método para obtener la lista no modificable de Productos
+     * Método para obtener la lista no modificable de productos
+     * @return lista no modificable de productos
      */
     public Collection<Producto> getListaProductos(){
-        return Collections.unmodifiableCollection(listaProductos);
+        return Collections.unmodifiableCollection(productos);
     }
     
     /*
      * Metodo para obtener la coleccion no modificable de pedidos
+     * @return lista no modificable de pedidos
      */
     public Collection<Pedido> getListarPedidos(){
-        return Collections.unmodifiableCollection(listaPedidos);
+        return Collections.unmodifiableCollection(pedidos);
     }
 
     /*
-     * Método para agregar un pedido a la drogueria
+     * Método para agregar un pedido a drogueria
      */
     public void agregarPedido (Pedido pedido){
-        assert listaPedidos != null;
-        //assert !productoSinStock (pedido.geProductoPedido().getCantidadStock());
-        listaPedidos.add(pedido);
+        assert pedidos != null;
+        pedidos.add(pedido);
     }
 
     /*
-     * Método para agregar un producto
+     * Método para agregar un producto a droguería
      */
     public void agregarProducto (Producto producto){
-        assert listaProductos != null;
-        listaProductos.add(producto);
+        assert productos != null;
+        productos.add(producto);
     }
 
     /*
-     * Método para agregar una persona
+     * Método para agregar una persona a droguería
      */
     public void agregarPersona (Persona persona){
-        listaPersonas.add(persona);
+        assert personas != null;
+        personas.add(persona);
     }
 
     /*
-     * Método para obtener la lista de productos con cantidad de stock superior a 100
+     * Método para obtener la lista de productos con cantidad de stock superior a 100 unidades de menor a mayor
+     * @return lista de productos con stock mayor a 100
      */
     public Collection <Producto> getProductoStock100 (){
-        return listaProductos.stream().filter(producto -> producto.getCantidadStock() > 100).toList();
+        return productos.stream().filter(producto -> producto.getCantidadStock() > 100).toList();
     }
 
     /*
@@ -87,17 +89,8 @@ public class Drogueria {
      */
     @Override
     public String toString() {
-        return "Drogueria [nombre=" + nombre + ", listaPersonas=" + listaPersonas + ", listaProductos=" + listaProductos
-                + ", listaPedidos=" + listaPedidos + "]";
+        return "Drogueria [nombre=" + nombre + ", listaPersonas=" + personas + ", listaProductos=" + productos
+                + ", listaPedidos=" + pedidos + "]";
     }
 
-    
-
-    //private boolean productoSinStock (int cantidadStock){
-       //Predicate <Pedido> pedidoVacio = pedido -> pedido.geProductoPedido().getCantidadStock() != 0;
-       // return listaPedidos.stream().filter(pedidoVacio).findAny().isPresent();
-    //}
-
-
 }
-//*Una estructura de datos puede añadir, eliminar, limpiar y obtener - add, remove, clean and get */

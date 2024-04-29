@@ -21,6 +21,7 @@ public abstract class Persona {
 
     /*
      * Método para obtener el nombre
+     * @return nombres de la persona
      */
     public String getNombres() {
         return nombres;
@@ -28,6 +29,7 @@ public abstract class Persona {
 
     /*
      * Método para obtener los apellidos de una persona
+     * @return apellidos de la persona
      */
     public String getApellidos() {
         return apellidos;
@@ -35,6 +37,7 @@ public abstract class Persona {
 
     /*
      * Método para obtener el DNI de una persona
+     * @return DNI de la persona
      */
     public String getDni() {
         return dni;
@@ -42,6 +45,7 @@ public abstract class Persona {
 
     /*
      * Método para obtener la dirección de una persona
+     * @return dirección de la persona
      */
     public String getDireccion() {
         return direccion;
@@ -49,6 +53,7 @@ public abstract class Persona {
 
     /*
      * Método para obtener el telefono de una persona
+     * @return telefono de la persona
      */
     public String getTelefono() {
         return telefono;
@@ -62,6 +67,4 @@ public abstract class Persona {
         return "Persona [nombres=" + nombres + ", apellidos=" + apellidos + ", dni=" + dni + ", direccion=" + direccion
                 + ", telefono=" + telefono + "]";
     }
-
-
 }

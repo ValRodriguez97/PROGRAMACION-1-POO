@@ -5,8 +5,8 @@ import java.time.LocalDate;
 public class Pedido {
     private final LocalDate fecha;
     private final int cantidad;
-    private final Producto productoPedido;
-    private final Cliente clientePedido;
+    private final Producto producto;
+    private final Cliente cliente;
 
     /*
      * Método constructor de la clase Pedido
@@ -14,44 +14,49 @@ public class Pedido {
     public Pedido(LocalDate fecha, int cantidad, Producto producto, Cliente cliente){
         this.fecha = fecha;
         this.cantidad = cantidad;
-        this.productoPedido = producto;
-        this.clientePedido = cliente;
-        assert productoPedido.getCantidadStock() > 0;
+        this.producto = producto;
+        this.cliente = cliente;
+        assert producto.getCantidadStock() > 0;
     }
 
     /*
-     * Método para obener una fecha
+     * Método para obtener una fecha
+     * @return fecha de un pedido
      */
     public LocalDate getFecha (){
         return fecha;
     }
 
     /*
-     * Método para obener una cantidad de un pedido
+     * Método para obtener una cantidad de un pedido
+     * @return cantidad de un pedido
      */
     public int getCantidad (){
         return cantidad;
     }
 
     /*
-     * Método para obtener el producto pedido
+     * Método para obtener el producto de un pedido
+     * @return producto pedido
      */
-    public Producto geProductoPedido(){
-        return productoPedido;
+    public Producto getProducto (){
+        return producto;
     }
 
     /*
      * Método para obtener un cliente 
+     * @return cliente de un pedido
      */
-    public Cliente gClientePedido (){
-        return clientePedido;
+    public Cliente getCliente (){
+        return cliente;
     }
 
     /*
-     * Método para calcular el valor de un pedido
+     * Método para calcular el costo total de un pedido
+     * @return costo total de un pedido
      */
     public double calcularValorPedido (){
-        return getCantidad() * productoPedido.getPrecio();
+        return getCantidad() * producto.getPrecio();
     }
 
     /*
@@ -59,7 +64,7 @@ public class Pedido {
      */
     @Override
     public String toString() {
-        return "Pedido [fecha=" + fecha + ", cantidad=" + cantidad + ", productoPedido=" + productoPedido
-                + ", clientePedido=" + clientePedido + "]";
+        return "Pedido [fecha=" + fecha + ", cantidad=" + cantidad + ", productoPedido=" + producto
+                + ", clientePedido=" + cliente + "]";
     }
 }

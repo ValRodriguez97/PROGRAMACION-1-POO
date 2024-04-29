@@ -6,13 +6,14 @@ public class CuidadoPersonal extends Producto {
     /*
      * Método constructor de la clase CuidadoPersonal
      */
-    public CuidadoPersonal (String ingredientes, String idProducto, String nombre, String descripcion, int precio, int cantidadStock, String idProveedor){
-        super(idProducto, nombre, descripcion, precio, cantidadStock, idProveedor);
+    public CuidadoPersonal (String idProducto, String nombre, String descripcion, int precio, int cantidadStock, String proveedor, String ingredientes){
+        super(idProducto, nombre, descripcion, precio, cantidadStock, proveedor);
         this.ingredientes = ingredientes;
     }
 
     /*
      * Método para obtener los ingredientes del producto de CuidadoPersonal
+     * @return ingredientes del producto de cuidado personal
      */
     public String getIngredientes (){
         return ingredientes;
