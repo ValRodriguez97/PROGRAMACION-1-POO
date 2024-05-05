@@ -3,53 +3,44 @@ package co.edu.uniquindio.poo;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.function.Predicate;
 
 public class Banco {
     private final String nombre;
-    private final Collection <CuentaBancaria> cuentas;
-    private final Collection<Titular> listaTitulares;
+    public static Collection<CuentaBancaria> cuentas;
+    public Collection<Titular> titulares;
 
-    /*
-     * Método constructor de la clase Banco
-     */
     public Banco (String nombre){
         this.nombre = nombre;
-        this.cuentas = new LinkedList<>();
-        this.listaTitulares = new LinkedList<>();
-        assert nombre!= null && !nombre.isBlank();
+        assert nombre != null && !nombre.isBlank() : "Error, el nombre debe ser diferente de null y no puede estar vacio";
+        Banco.cuentas = new LinkedList<>();
+        this.titulares = new LinkedList<>();
     }
 
-    /*
-     * Método para obtener el nombre de un banco
-     * @return nombre
-     */
-    public String getNombre(){
+    public String getNombre (){
         return nombre;
     }
 
-    /*
-     * Método para obtener la lista no modificable de cuentas de un banco
-     * @return colección no modificable de cuentas
-     */
-    public Collection<CuentaBancaria> getCuentas (){
+    public Collection<CuentaBancaria> getCuentas(){
         return Collections.unmodifiableCollection(cuentas);
     }
 
-    /*
-     * Método para obtener la lista no modificable de titulares de una cuenta
-     * @return lista no modificable de titulares
-     */
-    public Collection<Titular> getListaTitulares (){
-        return Collections.unmodifiableCollection(listaTitulares);
+    public Collection<Titular> getTitulares (){
+        return Collections.unmodifiableCollection(titulares);
     }
 
-    /*
-     * Método para añadir una cuenta bancaria a banco
-     */
     public void añadirCuentasBancarias (CuentaBancaria cuentaBancaria){
+        assert !cuentasExistentes (cuentas, cuentaBancaria.getNumeroCuenta()) : "La cuenta ya existe";
         cuentas.add(cuentaBancaria);
     }
 
-  
+    public void añadirTitulares (Titular titular){
+        titulares.add(titular);
+    }
+
+    public static boolean cuentasExistentes(Collection<CuentaBancaria> cuentas,int numeroCuenta){
+        Predicate<CuentaBancaria> cuentaIgual = cuentaBancaria -> cuentaBancaria.getNumeroCuenta() == numeroCuenta ;
+        return cuentas.stream().filter(cuentaIgual).findAny().isPresent();
+    }
 }
 

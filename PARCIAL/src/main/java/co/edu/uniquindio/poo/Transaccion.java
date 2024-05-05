@@ -2,6 +2,7 @@ package co.edu.uniquindio.poo;
 
 import java.time.LocalDate;
 
+
 public class Transaccion {
     private String codigo;
     private int valor;
@@ -18,11 +19,12 @@ public class Transaccion {
         this.valor = valor;
         this.fecha = fecha;
         this.descripcion = descripcion;
-        this.estadoCuenta = true;
+        this.estadoCuenta = estadoCuenta;
         this.tipoTransaccion = tipoTransaccion;
         assert codigo != null && !codigo.isBlank();
         assert valor > 0;
         assert descripcion != null && !descripcion.isBlank();
+        
     }
 
     /*
@@ -67,10 +69,29 @@ public class Transaccion {
     }
 
     public void transferirDinero (CuentaBancaria cuentaBancaria, CuentaBancaria cuentaDestino){
-        if (cuentaBancaria.getSaldo() >= valor){
-            cuentaBancaria.retirarDinero(valor);
-            cuentaDestino.depositarDinero(valor);
+        //assert cuentasExistentes (cuentaBancaria, cuentaDestino) : "la cuenta no existe";
+        if (cuentasExistentes (cuentaBancaria, cuentaDestino)){
+            if (cuentaBancaria.estadoCuenta == true && cuentaDestino.estadoCuenta){
+                if (cuentaBancaria.getSaldo() >= valor){
+                        cuentaBancaria.retirarDinero(valor);
+                        cuentaDestino.depositarDinero(valor);
+                        System.out.println("Transferencia exitosa");
+                    }
+                else {
+                    System.out.println("Error, El saldo de la cuenta es insuficiente y la cuenta esta inactiva");
+                }
+            }
+            else {
+                System.out.println("Error, no se puede transferir dinero a una cuenta inactiva");
+            }
         }
-    }
+        else{
+            System.out.println("La cuenta no existe");
+        }
+        
+    }        
 
+    public boolean cuentasExistentes (CuentaBancaria cuentaBancaria, CuentaBancaria cuentaDestino){
+        return Banco.cuentasExistentes(Banco.cuentas,cuentaBancaria.getNumeroCuenta()) && Banco.cuentasExistentes(Banco.cuentas, cuentaDestino.getNumeroCuenta());
+    }
 }

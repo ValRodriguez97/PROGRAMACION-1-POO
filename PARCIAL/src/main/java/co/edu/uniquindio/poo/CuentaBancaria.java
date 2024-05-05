@@ -16,7 +16,7 @@ public abstract class CuentaBancaria {
         this.titular = titular;
         this.numeroCuenta = numeroCuenta;
         this.saldo = saldo;
-        this.estadoCuenta = true;
+        this.estadoCuenta = estadoCuenta;
         this.listaTransaccion = new LinkedList<>();
     }
 
@@ -29,9 +29,12 @@ public abstract class CuentaBancaria {
     }
 
     public double getSaldo(){
-        if(estadoCuenta == true){
-        }
+        assert estadoCuenta == true;
         return saldo;
+    }
+
+    public void consultarSaldo (){
+        System.out.println("Su saldo actual es el siguiente:"+ "\n" + saldo);
     }
 
     public boolean cuentaActiva (){
@@ -44,8 +47,10 @@ public abstract class CuentaBancaria {
 
     public void depositarDinero (double dinero){
         assert dinero > 0;
-                saldo += dinero;
-                estadoCuenta = false ;
+         saldo += dinero;
+            if (saldo == 0){
+            estadoCuenta = false;
+            }
         }
     
     public abstract void retirarDinero(double dinero);

@@ -7,6 +7,8 @@ public class Titular {
     public Titular (String nombresTitular, String apellidosTitular){
         this.nombresTitular = nombresTitular;
         this.apellidosTitular = apellidosTitular;
+        assert nombresTitular != null && !nombresTitular.isBlank() : "Error, el nombre del titular no debe de ser nulo y no debe de estar vacio";
+        assert apellidosTitular != null && !apellidosTitular.isBlank() : "Error, el apellido del titular no debe de ser nulo y no debe de estar vacio";
     }
 
     public String getNombresTitular (){
