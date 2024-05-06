@@ -12,10 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class GUIController{
-    //private MensajeController mensajeController;
     private Stage stage;
     private CuentaBancaria cuentaBancaria;
-    
     
     @FXML
     private TextField apellidosTitularField;
@@ -43,7 +41,7 @@ public class GUIController{
         Stage stage1 = new Stage();
         stage1.setScene(scene);
         try {
-            // Obtener datos de los campos de texto
+            // Obtiene los datos ingresados en los campos de texto de la interfaz
             String nombre = nombreTitularField.getText();
             String apellidos = apellidosTitularField.getText();
             int numeroCuenta = Integer.parseInt(numeroCuentaField.getText());
@@ -55,10 +53,10 @@ public class GUIController{
             Titular titular = new Titular(nombre, apellidos); 
             switch (tipoCuenta.toLowerCase()) {
                 case "corriente":
-                    cuentaBancaria = new CuentaCorriente(titular, numeroCuenta, saldoInicial, true, saldoInicial);
+                    cuentaBancaria = new CuentaCorriente(titular, numeroCuenta, saldoInicial, true, 50000);
                     break;
                 case "ahorros":
-                    cuentaBancaria = new CuentaAhorros(titular, numeroCuenta, saldoInicial, true, saldoInicial);
+                    cuentaBancaria = new CuentaAhorros(titular, numeroCuenta, saldoInicial, true, 50000);
                     break;
                 default:
                     mostrarMensajeEnVentana("Tipo de cuenta no válido.");
@@ -73,7 +71,7 @@ public class GUIController{
     
     private void mostrarMensajeEnVentana(String mensaje) {
         try {
-            // Cargar la vista de la ventana de mensaje
+            // Mostrar ventana de mensaje
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Mensaje.fxml"));
             Parent root = loader.load();
 

@@ -12,31 +12,37 @@ public class BancoTest {
     public void realizarDeposito (){
         LOG.info("Inicio test realizar deposito");
         var banco = new Banco("BBVA");
-        var cuenta = new CuentaAhorros(new Titular("Valentina", "Rodriguez"), 819280, 
-        100000, true, 0.5);
+        var cuenta = new CuentaAhorros(new Titular("Valentina", "Rodriguez"), 819280, 100000, true, 0.5);
+        banco.añadirCuentasBancarias(cuenta);
+        cuenta.depositarDinero(100000);
+        assertEquals(195000, cuenta.getSaldo());
+        LOG.info("Fin test realizar deposito");
+    }
+
+    @Test
+    public void retirarDinero (){
+        LOG.info("Inicio test retirar dinero");
+        var banco = new Banco("BBVA");
+        var cuenta = new CuentaAhorros(new Titular("Valentina", "Rodriguez"), 819280, 100000, true, 0.5);
         banco.añadirCuentasBancarias(cuenta);
         cuenta.retirarDinero(10000);
         assertEquals(95000, cuenta.getSaldo());
-        System.out.println(cuenta.getSaldo());
-        cuenta.depositarDinero(100000);
-        assertEquals(195000, cuenta.getSaldo());
-        
+        LOG.info("Fin test retirar dinero");
     }
 
     @Test 
     public void transferirDinero (){
         LOG.info("Inicio test transferir dinero");
         var banco = new Banco("Davivienda");
-        var cuenta = new CuentaCorriente(new Titular("a", "b"), 1001000200,1000000, true, 50000);
-        var cuenta2 = new CuentaCorriente(new Titular("a", "b"), 2002000100, 40000, false, 50000);
+        var cuenta = new CuentaCorriente(new Titular("Ximena", "Muñoz"), 1001000200,1000000, true, 50000);
+        var cuenta2 = new CuentaCorriente(new Titular("Clara", "Suarez"), 2002000100, 40000, false, 50000);
         banco.añadirCuentasBancarias(cuenta);
         banco.añadirCuentasBancarias(cuenta2);
-
-        var transacción = new Transaccion("9182", 40000, LocalDate.of(2024, 05, 02), "a", true, TipoTransaccion.DEPOSITO);
+        var transacción = new Transaccion("9182", 40000, LocalDate.of(2024, 05, 02), "Dinero debido", true, TipoTransaccion.DEPOSITO);
         cuenta.añadirTransaccion(transacción);
         transacción.transferirDinero(cuenta, cuenta2);
         cuenta.mostrarEstadoTransacciones();
-        
+        LOG.info("Fin test transferir dinero");
          
 
     }
