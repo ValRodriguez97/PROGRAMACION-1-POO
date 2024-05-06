@@ -12,14 +12,15 @@ public class BancoTest {
     public void realizarDeposito (){
         LOG.info("Inicio test realizar deposito");
         var banco = new Banco("BBVA");
-        var cuenta = new CuentaCorriente(new Titular("Valentina", "Rodriguez"), 819280, 
-        100000, true, 50000);
+        var cuenta = new CuentaAhorros(new Titular("Valentina", "Rodriguez"), 819280, 
+        100000, true, 0.5);
         banco.añadirCuentasBancarias(cuenta);
-        cuenta.retirarDinero(130000);
-        assertEquals(-30000, cuenta.getSaldo());
-       assertEquals(20000, cuenta.getLimiteSobregiro());
-        cuenta.consultarSaldo();
-        System.out.println(cuenta.getLimiteSobregiro());
+        cuenta.retirarDinero(10000);
+        assertEquals(95000, cuenta.getSaldo());
+        System.out.println(cuenta.getSaldo());
+        cuenta.depositarDinero(100000);
+        assertEquals(195000, cuenta.getSaldo());
+        
     }
 
     @Test 
@@ -27,14 +28,14 @@ public class BancoTest {
         LOG.info("Inicio test transferir dinero");
         var banco = new Banco("Davivienda");
         var cuenta = new CuentaCorriente(new Titular("a", "b"), 1001000200,1000000, true, 50000);
-        var cuenta2 = new CuentaCorriente(new Titular("a", "b"), 2002000100, 40000, true, 50000);
+        var cuenta2 = new CuentaCorriente(new Titular("a", "b"), 2002000100, 40000, false, 50000);
         banco.añadirCuentasBancarias(cuenta);
         banco.añadirCuentasBancarias(cuenta2);
 
         var transacción = new Transaccion("9182", 40000, LocalDate.of(2024, 05, 02), "a", true, TipoTransaccion.DEPOSITO);
+        cuenta.añadirTransaccion(transacción);
         transacción.transferirDinero(cuenta, cuenta2);
-        cuenta2.getSaldo();
-        
+        cuenta.mostrarEstadoTransacciones();
         
          
 
