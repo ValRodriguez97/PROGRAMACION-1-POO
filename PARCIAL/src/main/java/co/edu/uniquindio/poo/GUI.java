@@ -19,7 +19,6 @@ public class GUI extends Application {
         controller.setStage(miStage);
         miStage.show();
     }
-
 }
 
     
