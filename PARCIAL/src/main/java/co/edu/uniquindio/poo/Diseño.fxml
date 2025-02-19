@@ -52,7 +52,7 @@
                   </Text>
                </children>
             </AnchorPane>
-            <TextField fx:id="nombreTitularField" alignment="CENTER" layoutX="109.0" layoutY="127.0" prefHeight="31.0" prefWidth="282.0" promptText="Nombre Titular " style="-fx-background-color: #DFE1DB; -fx-border-color: #AFD567; -fx-border-width: 0px 0px 2px 0px;">
+            <TextField fx:id="nombreTitularField" alignment="CENTER" layoutX="109.0" layoutY="127.0" prefHeight="31.0" prefWidth="282.0" promptText="Nombre Titular " style="-fx-background-color: #DFE1DB; -fx-border-color: #00FF0000; -fx-border-width: 0px 0px 2px 0px;">
                <font>
                   <Font size="15.0" />
                </font>
